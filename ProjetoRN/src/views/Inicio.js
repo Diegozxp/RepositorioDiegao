@@ -28,7 +28,7 @@ export default function Inicio() {
             <Text style={styles.botao}>Ver perfil</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.botaoColecao} onPress={colecao}>
-            <Text style={styles.botao}>Ver colecao</Text>
+            <Text style={styles.botao}>Ver coleção</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -41,7 +41,8 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: '#f6f6f6',
     padding: 20,
-    backgroundColor: '#009fb7'
+    backgroundColor: '#009fb7',
+    justifyContent: 'center',
   },
   content: {
     marginTop: 40,
