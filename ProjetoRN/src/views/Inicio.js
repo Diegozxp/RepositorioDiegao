@@ -12,7 +12,7 @@ export default function Inicio() {
   const { navigate } = useNavigation();
 
   const perfil = () => {
-    navigate('Profile')
+    navigate('Perfil')
   };
 
   const colecao = () => {
@@ -21,12 +21,15 @@ export default function Inicio() {
 
   return(
     <SafeAreaView style={styles.container}>
-      <Text>Bem vindos ao app</Text>
-      <Text>O que deseja fazer?</Text>
-
       <View style={styles.content}>
-        <TouchableOpacity onPress={perfil}>Ver perfil</TouchableOpacity>
-        <TouchableOpacity onPress={colecao} >Ver coleção</TouchableOpacity>
+        <Text style={styles.title}>Bem vindos ao app</Text>
+        <Text style={styles.subtitle}>O que deseja fazer?</Text>
+        <TouchableOpacity style={styles.botaoPerfil} onPress={perfil}>
+            <Text style={styles.botao}>Ver perfil</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.botaoColecao} onPress={colecao}>
+            <Text style={styles.botao}>Ver colecao</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
@@ -36,32 +39,46 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: '#f6f6f6'
+    backgroundColor: '#f6f6f6',
+    padding: 20,
+    backgroundColor: '#009fb7'
   },
   content: {
     marginTop: 40,
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 12,
   },
   title: {
     fontSize: 22,
-    color: '#4f4f4f',
+    color: '#fff',
     fontWeight: 'bold',
   },
   subtitle: {
-    fontSize: 22,
-    color: '#858690',
+    fontSize: 16,
+    color: '#f7f7f7',
+    marginBottom: 20,
   },
   botaoPerfil: {
-    backgroundColor: '#345dd1',
-    color: '#fff',
-    fontSize: 18,
-    fontWeight: 'bold',
+    marginVertical: 10,
+    width: '100%',
+    backgroundColor: '#0a1128',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 10,
+    borderRadius: 4,
   },
   botaoColecao: {
-    backgroundColor: '#d7263d',
+    width: '100%',
+    backgroundColor: '#0a1128',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 10,
+    borderRadius: 4,
+  },
+  botao: {
     color: '#fff',
     fontSize: 18,
     fontWeight: 'bold',
-  },
+  }
 });

@@ -10,9 +10,28 @@ const Stack = createStackNavigator();
 export default function Routes() {
   return(
     <Stack.Navigator>
-      <Stack.Screen name="Inicio" component={Inicio} />
-      <Stack.Screen name="Colecao" component={Colecao} />
-      <Stack.Screen name="Perfil" component={Perfil} />
+      <Stack.Screen options={{
+          headerTintColor: '#fff',
+          headerStyle: {
+              backgroundColor: '#009fb7',
+              borderBottomWidth: 0,
+          },
+      }} name="Inicio" component={Inicio} />
+      <Stack.Screen options={{
+          headerTitle: '',
+          headerStyle: {
+              backgroundColor: '#009fb7',
+              borderBottomWidth: 0,
+          },
+          headerTintColor: '#fff',
+      }} name="Colecao" component={Colecao} />
+      <Stack.Screen options={{
+          headerTintColor: '#fff',
+          headerStyle: {
+              backgroundColor: '#009fb7',
+              borderBottomWidth: 0,
+          },
+      }}  name="Perfil" component={Perfil} />
     </Stack.Navigator>
   );
 }

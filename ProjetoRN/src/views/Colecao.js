@@ -4,6 +4,7 @@ import {
   Text,
   Image,
   StyleSheet,
+  View,
 } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 
@@ -32,17 +33,17 @@ const bicicletas = [
 
 export default function Colecao() {
   return(
-    <SafeAreaView>
-      <Text>Bikes iradas</Text>
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.title}>Bikes Iradas</Text>
 
       <FlatList
+        style={{ flex: 1 }}
         ListFooterComponent={<View />}
         ListFooterComponentStyle={{ height: 80 }}
-        numColumns={2}
         keyExtractor={item => item.id}
         data={bicicletas}
         renderItem={({ item }) => (
-          <View styles={styles.card}>
+          <View style={styles.card}>
             <Image style={styles.image} source={item.image} />
             <Text style={styles.name}>{item.name}</Text>
           </View>
@@ -55,6 +56,14 @@ export default function Colecao() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: 'center',
+    backgroundColor: '#009fb7'
+  },
+  title: {
+    marginTop: 20,
+    color: '#fff',
+    fontSize: 22,
+    marginVertical: 20,
   },
   content: {
     alignItems: 'center',
@@ -62,15 +71,22 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   image: {
-    height: 70,
-    width: 70,
+    height: 120,
+    width: 120,
   },
   name: {
-    fontSize: 22,
-    color: '#4f4f4f',
-    fontWeight: 'bold',
+    fontSize: 16,
+    color: '#222',
   },
   card: {
-    height: 100,
+      alignItems: 'center',
+      justifyContent: 'center',
+   padding: 20,
+   borderRadius: 8,
+   backgroundColor: '#fff',
+   marginBottom: 10,
+   shadowOffset:{  width: 0,  height: 4,  },        
+    shadowColor: 'rgba(0,0,0,0.1)',
+    shadowOpacity: 1.0,
   },
 });

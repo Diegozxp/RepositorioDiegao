@@ -4,18 +4,17 @@ import {
   Text,
   Image,
   StyleSheet,
-  View,
 } from 'react-native';
 
 export default function Perfil() {
   return(
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Diego e Henrique</Text>
-      <Text style={styles.title}>diegohenrique@gmail.com</Text>
-        <Image
-          styles={styles.image}
+         <Image
+          style={styles.image}
           source={{ uri: 'https://github.com/diegozxp.png' }} 
         />
+      <Text style={styles.title}>Diego</Text>
+      <Text style={styles.subtitle}>diego@gmail.com</Text>
     </SafeAreaView>
   );
 }
@@ -23,15 +22,19 @@ export default function Perfil() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#009fb7'
   },
   title: {
-    fontSize: 22,
-    color: '#4f4f4f',
+    marginTop: 10,
+    fontSize: 18,
+    color: '#fff',
     fontWeight: 'bold',
   },
   subtitle: {
-    fontSize: 22,
-    color: '#858690',
+    fontSize: 16,
+    color: '#fff',
   },
   image: {
     height: 120,
